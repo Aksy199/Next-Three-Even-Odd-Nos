@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin-top: 16%;
+        text-align: center;
+        background-color: aquamarine;
+        
+      }
+      input{
+        text-align: center;
+        color: black;
+        height: 15px;
+        width: 18vw;
+      }
+      button{
+        height: 35px;
+        width: 50px;
+        column-gap: 3px;
+        border-radius: 25px;
+        border: none;
+        background-color: orchid;
+        color: black;
+        cursor: pointer;
+      }
+      button:hover{
+        height: 40px;
+        width: 55px;
+        column-gap: 3px;
+        border-radius: 25px;
+        border: none;
+        background-color: goldenrod;
+        color: black;
+        cursor: pointer;
+      }
+     
+      header{
+        align-content: flex-start;
+        margin: 15px 20px;
+        text-align: center;
+        font-family:  'Lucida Grande';
+        font-size: large;
+      }
+    </style>
+
+    <header></header>
+
+  </head>
+  <body>
+    
+    <input
+      
+      type="number"
+      placeholder="Please Enter Any Number"
+    />
+    <button>Enter</button>
+    <script>
+      document.querySelector("button").onclick = function () {
+        let num = document.querySelector("input").value;
+
+        if (num < 0) {
+          document.querySelector("header").innerText = "please Enter a positive No.";
+        } else {
+          function Next3(num) {
+            let arr = [];
+            for (let i = 1; i <= 3; i++) {
+              arr.push(eval(num + "+" + i * 2));
+            }
+            console.log(arr.join(","));
+            document.querySelector("header").innerText =
+             `Next 3 Even /Odd no are ${arr.join(",")}`;
+          }
+
+          Next3(num);
+        }
+      };
+    </script>
+  </body>
+</html>
